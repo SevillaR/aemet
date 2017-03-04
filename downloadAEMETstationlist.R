@@ -21,15 +21,18 @@ downloadAEMETstationlist<-function (api)
   station_id = df[, "indicativo"]
   longString = as.character(df[, "longitud"])
   latString = as.character(df[, "latitud"])
+
+
   deg = as.numeric(substr(longString, 0, 2))
   min = as.numeric(substr(longString, 3,4))
   sec = as.numeric(substr(longString, 5,6))
   x = deg + min/60 + sec/3600
+  x<-ifelse(substr(longString, 7, 8) =="W", x, -x)
   deg = as.numeric(substr(latString, 0, 2))
   min = as.numeric(substr(latString, 3,4))
   sec = as.numeric(substr(latString, 5,6))
   y = deg + min/60 + sec/3600
-  points <- SpatialPoints(coords = cbind(x, y), CRS("+proj=longlat"))
+  points <- SpatialPoints(coords = cbind(-x, y), CRS("+proj=longlat"))
   colnames(points@coords) <- c("longitude", "latitude")
   dfout <- data.frame(station_id=df[,"indicativo"], station = df[, "nombre"], province = df[, "provincia"], elevation = as.numeric(df[, "altitud"]))
 
