@@ -105,11 +105,9 @@ aemet_mensual <- function(api, dates, station_id, export = FALSE,
 
 
     for (i in 1:nrow(url)) {
+
       if (verbose) setTxtProgressBar(pb, i)
       t0[i] <- Sys.time()
-
-
-
 
       data_raw <- curl_fetch_memory(url[i,j], h)
       urldatos <- strsplit(rawToChar(data_raw$content), split = "\"")[[1]][10]
@@ -118,13 +116,29 @@ aemet_mensual <- function(api, dates, station_id, export = FALSE,
 
       url2 <- httr::handle(urldatos)
       httr::set_config(httr::config(ssl_verifypeer = 0L))
-      q1 <- httr::GET(handle = url2)
-      dataQ1 <- httr::content(q1, type = "text/plain", encoding = "ISO-8859-15")
+      datos <- httr::GET(handle = url2)
+      data.json <- httr::content(datos, type = "text/plain", encoding = "ISO-8859-15")
       library(RJSONIO)
-      listQ1 <- fromJSON(dataQ1)
-      # df <- data.frame(t(sapply(listQ1,function(e) e)))
+      datalist <- fromJSON(data.json)
+      datalist <- datalist[-13]  # last element are annual data
+      dataf <- lapply(datalist, function(x) {as.data.frame(t(x))})
+      # now bind all data frames (considering variables!)
 
       t1[i] <- Sys.time()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       data_raw <- data_raw$content[-which(data_raw$content %in% c("5b", "20", "7b", "20", "20", "22", "5d"))]
       data_raw <- strsplit(rawToChar(data_raw), split = "}")
