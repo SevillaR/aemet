@@ -1,4 +1,4 @@
-.downloadAEMETnormalized<-function (api, station_id)
+.downloadAEMETnormalized_one<-function (api, station_id)
 {
   library(curl)
   library(httr)

@@ -1,8 +1,16 @@
-
+#' Download list of AEMET stations
+#'
+#' @param api String with the AEMET API key (see https://opendata.aemet.es/
+#'
+#' @return
+#' @export
+#'
+#' @examples
 downloadAEMETstationlist<-function (api)
   {
   library(curl)
   library(httr)
+  library(sp)
   h = new_handle()
   handle_setheaders(h, `Cache-Control` = "no-cache", api_key = api)
   handle_setopt(h, ssl_verifypeer = FALSE)
