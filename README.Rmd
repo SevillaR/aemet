@@ -1,0 +1,36 @@
+---
+title: "R interface to AEMET API"
+author: "Sevilla R users (http://sevillarusers.wordpress.com)"
+output: github_document
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+Download climatic and meteorological data from Spanish Meteorological Agency (AEMET) using their API: https://opendata.aemet.es.
+
+
+## Installation
+
+```{r eval=FALSE}
+library(devtools)
+install_github("SevillaR/aemet")
+```
+
+## Requirements
+
+To be able to download data from AEMET you will need a free API key which you can get at https://opendata.aemet.es.
+
+## Usage
+
+```{r eval=FALSE}
+library(aemet)
+stations <- aemet_stations(apikey)
+grazalema <- get_aemet_normalized(apikey, "5911A")
+```
+
