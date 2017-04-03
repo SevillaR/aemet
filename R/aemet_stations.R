@@ -10,9 +10,13 @@
 #' @import sp
 #' @import RJSONIO
 #'
+#' @examples \dontrun{
+#' stations <- aemet_stations(apikey)  #SpatialPointsDataFrame
+#' stationdata <- as.data.frame(stations)
+#' }
 aemet_stations <- function(apikey) {
   h <- new_handle()
-  handle_setheaders(h, `Cache-Control` = "no-cache", api_key = api)
+  handle_setheaders(h, `Cache-Control` = "no-cache", api_key = apikey)
   handle_setopt(h, ssl_verifypeer = FALSE)
   handle_setopt(h, customrequest = "GET")
   url <- paste("https://opendata.aemet.es/opendata/api/valores/climatologicos/inventarioestaciones/todasestaciones/")
