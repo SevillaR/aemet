@@ -15,7 +15,7 @@ LazyData: true
 URL: https://github.com/SevillaR/aemet
 BugReports: https://github.com/SevillaR/aemet/issues
 Depends:
-    R (>= 3.3.3)
+    R (>= 3.2.3)
 Imports:
   httr,
   curl,
