@@ -1,12 +1,14 @@
 Package: aemet
 Type: Package
 Title: Obtain Climatic and Meteorological Data from Spanish Meteorological Agency (AEMET)
-Version: 0.1.0
-Date: 2017-04-04
+Version: 0.1.1
+Date: 2018-03-17
 Authors@R: c(person("Francisco", "Balao", role = "aut"),
             person("Francisco", "Rodriguez-Sanchez", email = "f.rodriguez.sanc@gmail.com", role = c("aut", "cre")),
             person("Francisco", "Viciana", role = "aut"),
-            person("Pedro", "Molina", role = "aut"))
+            person("Pedro", "Molina", role = "aut")),
+            person("Jose", "Alcaide", role = "aut")),
+            person("David", "Gámez", role = "aut"))
 Description: R interface to AEMET API (https://opendata.aemet.es/). 
     Download climatic and meteorological data directly from R.
 License: GPL-3
@@ -15,12 +17,10 @@ LazyData: true
 URL: https://github.com/SevillaR/aemet
 BugReports: https://github.com/SevillaR/aemet/issues
 Depends:
-    R (>= 3.2.3)
+    R (>= 3.0.0)
 Imports:
   httr,
-  curl,
-  RJSONIO,
-  sp
+  jsonlite
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 
