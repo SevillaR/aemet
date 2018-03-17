@@ -3,8 +3,9 @@ Type: Package
 Title: Obtain Climatic and Meteorological Data from Spanish Meteorological Agency (AEMET)
 Version: 0.1.2
 Date: 2018-03-17
-Authors@R: c(person("Francisco", "Balao", role = "aut"),
+Authors@R: c(
             person("Francisco", "Rodriguez-Sanchez", email = "f.rodriguez.sanc@gmail.com", role = c("aut", "cre")),
+            person("Francisco", "Balao", role = "aut"),
             person("Francisco", "Viciana", role = "aut"),
             person("Pedro", "Molina", role = "aut"),
             person("Jose", "Alcaide", role = "aut"),
@@ -20,7 +21,8 @@ Depends:
     R (>= 3.0.0)
 Imports:
   httr,
-  jsonlite
+  jsonlite,
+  stringr
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 
