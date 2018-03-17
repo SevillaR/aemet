@@ -23,5 +23,5 @@ Usage
 ``` r
 library(aemet)
 stations <- aemet_stations(apikey)
-grazalema <- get_aemet_normalized(apikey, "5911A")
+grazalema <- aemet_climatology_station("5911A", apikey)
 ```
