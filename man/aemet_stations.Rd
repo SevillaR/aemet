@@ -10,14 +10,13 @@ aemet_stations(apikey)
 \item{apikey}{String with the AEMET API key (see https://opendata.aemet.es/).}
 }
 \value{
-A SpatialPointsDataFrame.
+A data.frame
 }
 \description{
 Get AEMET stations
 }
 \examples{
 \dontrun{
-stations <- aemet_stations(apikey)  #SpatialPointsDataFrame
-stationdata <- as.data.frame(stations)
+stations <- aemet_stations(apikey)
 }
 }

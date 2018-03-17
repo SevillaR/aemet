@@ -1,7 +1,7 @@
 Package: aemet
 Type: Package
 Title: Obtain Climatic and Meteorological Data from Spanish Meteorological Agency (AEMET)
-Version: 0.1.1
+Version: 0.1.2
 Date: 2018-03-17
 Authors@R: c(person("Francisco", "Balao", role = "aut"),
             person("Francisco", "Rodriguez-Sanchez", email = "f.rodriguez.sanc@gmail.com", role = c("aut", "cre")),
