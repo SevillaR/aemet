@@ -5,10 +5,8 @@
 #' @return A SpatialPointsDataFrame.
 #' @export
 #'
-#' @import curl
 #' @import httr
-#' @import sp
-#' @import RJSONIO
+
 #'
 #' @examples \dontrun{
 #' stations <- aemet_stations(apikey)  #SpatialPointsDataFrame
@@ -16,6 +14,7 @@
 #' }
 aemet_stations <- function(apikey) {
 
+  test <- get_data(apidest = "/api/valores/climatologicos/inventarioestaciones/todasestaciones", apikey)
   df <- data.frame(t(sapply(listQ1, function(e) e)))
   station_id <- df[, "indicativo"]
   longString <- as.character(df[, "longitud"])

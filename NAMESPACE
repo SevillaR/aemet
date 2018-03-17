@@ -2,7 +2,6 @@
 
 export(aemet_stations)
 export(get_aemet_normalized)
-import(RJSONIO)
-import(curl)
+export(get_data)
 import(httr)
-import(sp)
+importFrom(jsonlite,fromJSON)

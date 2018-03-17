@@ -6,8 +6,8 @@ Date: 2018-03-17
 Authors@R: c(person("Francisco", "Balao", role = "aut"),
             person("Francisco", "Rodriguez-Sanchez", email = "f.rodriguez.sanc@gmail.com", role = c("aut", "cre")),
             person("Francisco", "Viciana", role = "aut"),
-            person("Pedro", "Molina", role = "aut")),
-            person("Jose", "Alcaide", role = "aut")),
+            person("Pedro", "Molina", role = "aut"),
+            person("Jose", "Alcaide", role = "aut"),
             person("David", "Gámez", role = "aut"))
 Description: R interface to AEMET API (https://opendata.aemet.es/). 
     Download climatic and meteorological data directly from R.

@@ -7,9 +7,7 @@
 #' @return A data frame.
 #' @export
 #'
-#' @import curl
 #' @import httr
-#' @import RJSONIO
 #'
 #' @examples \dontrun{
 #' grazalema <- get_aemet_normalized(apikey, "5911A")

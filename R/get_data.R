@@ -1,6 +1,6 @@
 #' Get data from AEMET
 #'
-#' @param apidest character Destination URL. See \url{https://opendata.aemet.es/dist/index.html#!/valores-climatologicos/Inventario_de_estaciones_valores_climatol%C3%B3gicos}.
+#' @param apidest character Destination URL. See \url{https://opendata.aemet.es/dist/index.html}.
 #' @param apikey Personal API key (see \url{https://opendata.aemet.es/centrodedescargas/inicio}).
 #'
 #' @return a data.frame

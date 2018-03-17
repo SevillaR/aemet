@@ -11,7 +11,6 @@
 #'
 #' @return
 #'
-#' @import curl
 #' @importFrom meteoland downloadAEMETstationdata
 #'
 
