@@ -11,7 +11,7 @@
 #'
 get_data <- function(apidest, apikey) {
 
-  url1 <- paste0(baseurl, apidest)
+  url1 <- paste0(url.base, apidest)
 
   path1 <- httr::GET(url1, add_headers(api_key = apikey))
 
