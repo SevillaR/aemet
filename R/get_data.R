@@ -11,6 +11,8 @@
 #'
 get_data <- function(apidest, apikey) {
 
+  url.base <- "https://opendata.aemet.es/opendata"
+
   url1 <- paste0(url.base, apidest)
 
   path1 <- httr::GET(url1, add_headers(api_key = apikey))
