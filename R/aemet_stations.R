@@ -14,22 +14,17 @@
 #' }
 aemet_stations <- function(apikey) {
 
-  test <- get_data(apidest = "/api/valores/climatologicos/inventarioestaciones/todasestaciones", apikey)
+  stations <- get_data(apidest = "/api/valores/climatologicos/inventarioestaciones/todasestaciones", apikey)
+
+  stations$longitud <- Vectorize(dms2decdegrees)(stations$longitud)
+
+
   df <- data.frame(t(sapply(listQ1, function(e) e)))
   station_id <- df[, "indicativo"]
   longString <- as.character(df[, "longitud"])
   latString <- as.character(df[, "latitud"])
 
-
-  deg <- as.numeric(substr(longString, 0, 2))
-  min <- as.numeric(substr(longString, 3,4))
-  sec <- as.numeric(substr(longString, 5,6))
-  x <- deg + min/60 + sec/3600
-  x <- ifelse(substr(longString, 7, 8) == "W", x, -x)
-  deg <- as.numeric(substr(latString, 0, 2))
-  min <- as.numeric(substr(latString, 3,4))
-  sec <- as.numeric(substr(latString, 5,6))
-  y <- deg + min/60 + sec/3600
+  x <-
   points <- SpatialPoints(coords = cbind(-x, y), CRS("+proj=longlat"))
   colnames(points@coords) <- c("longitude", "latitude")
   dfout <- data.frame(station_id = df[, "indicativo"],
