@@ -7,6 +7,7 @@
 #' @export
 #' @import httr
 #' @importFrom jsonlite fromJSON
+#' @importFrom stringr str_extract_all
 #'
 #'
 get_data <- function(apidest, apikey) {
@@ -17,8 +18,14 @@ get_data <- function(apidest, apikey) {
 
   path1 <- httr::GET(url1, add_headers(api_key = apikey))
 
-  url.data <- httr::content(path1, as = "parsed")$datos
-  url.metadata <- httr::content(path1, as = "parsed")$metadatos
+  urls.text <- httr::content(path1, as = "text")
+
+  ## TO DO: use base R rather than stringr
+  ## Also extract urls more safely
+  urls <- unlist(stringr::str_extract_all(urls.text,
+                                       pattern = "https://opendata.aemet.es/opendata/sh/([:alnum:])+"))
+  url.data <- urls[1]
+  url.metadata <- urls[2]
 
   #path2 <- GET(url.data, add_headers(api_key = apikey)) # it seems apikey not necessary for this step
   path2 <- httr::GET(url.data)
