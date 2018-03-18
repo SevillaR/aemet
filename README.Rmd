@@ -5,12 +5,11 @@ output: github_document
 ---
 
 ```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.path = "README-")
 ```
+
+[![Travis build status](https://travis-ci.org/SevillaR/aemet.svg?branch=master)](https://travis-ci.org/SevillaR/aemet)
+
 
 Download climatic and meteorological data from Spanish Meteorological Agency (AEMET) using their API: https://opendata.aemet.es.
 
