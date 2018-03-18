@@ -22,8 +22,8 @@ get_data <- function(apidest, apikey) {
 
   ## TO DO: use base R rather than stringr
   ## Also extract urls more safely
-  urls <- unlist(stringr::str_extract_all(urls.text,
-                                       pattern = "https://opendata.aemet.es/opendata/sh/([:alnum:])+"))
+  urls <- unlist(strsplit(urls.text, "\\\""))
+  urls <- urls[grep("https://opendata.aemet.es/opendata/sh/", urls)]
   url.data <- urls[1]
   url.metadata <- urls[2]
 
