@@ -2,10 +2,29 @@
 % Please edit documentation in R/aemet-package.R
 \docType{package}
 \name{aemet-package}
-\alias{aemet-package}
 \alias{aemet}
-\title{R interface to AEMET API}
+\alias{aemet-package}
+\title{aemet: Obtain Climatic and Meteorological Data from Spanish Meteorological Agency (AEMET)}
 \description{
-Download climatic and meteorological data from AEMET directly from R.
+R interface to AEMET API (https://opendata.aemet.es/).
+Download climatic and meteorological data directly from R.
 }
-\keyword{package}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/SevillaR/aemet}
+  \item Report bugs at \url{https://github.com/SevillaR/aemet/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Francisco Rodriguez-Sanchez \email{f.rodriguez.sanc@gmail.com}
+
+Authors:
+\itemize{
+  \item Francisco Balao
+  \item David Gámez
+}
+
+}
+\keyword{internal}
