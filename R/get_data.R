@@ -7,7 +7,6 @@
 #' @export
 #' @import httr
 #' @importFrom jsonlite fromJSON
-#' @importFrom stringr str_extract_all
 #'
 #'
 get_data <- function(apidest, apikey) {
