@@ -19,6 +19,5 @@ Depends:
 Imports:
   httr,
   jsonlite
-VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 
