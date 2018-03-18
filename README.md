@@ -2,7 +2,7 @@ R interface to AEMET API
 ================
 Sevilla R users (<http://sevillarusers.wordpress.com>)
 
-[![Travis build status](https://travis-ci.org/SevillaR/aemet.svg?branch=master)](https://travis-ci.org/SevillaR/aemet)
+[![Travis build status](https://travis-ci.org/SevillaR/aemet.svg?branch=master)](https://travis-ci.org/SevillaR/aemet) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/SevillaR/aemet?branch=master&svg=true)](https://ci.appveyor.com/project/SevillaR/aemet)
 
 Download climatic and meteorological data from Spanish Meteorological Agency (AEMET) using their API: <https://opendata.aemet.es>.
 
